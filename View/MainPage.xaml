@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="testTask.View.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:testTask.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="Filter:" Margin="5" />
+            <TextBox Text="{Binding CryptoFilter, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="5" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" Margin="5" ItemsSource="{Binding Items}" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <Style TargetType="Hyperlink">
+                    <EventSetter Event="Click" Handler="Hyperlink_Click"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Rank" Binding="{Binding Rank}" />
+                <DataGridHyperlinkColumn Header="Name" Binding="{Binding Explorer}" ContentBinding="{Binding Symbol}" />
+                <DataGridHyperlinkColumn Header="Name" Binding="{Binding Id}" ContentBinding="{Binding Name}" />
+                <DataGridTextColumn Header="Supply" Binding="{Binding Supply}" />
+                <DataGridTextColumn Header="PriceUsd" Binding="{Binding PriceUsd}" />
+                <DataGridTextColumn Header="ChangePercent24Hr" Binding="{Binding ChangePercent24Hr}" />
+                <DataGridTextColumn Header="Vwap24Hr" Binding="{Binding Vwap24Hr}" />
+                <DataGridTextColumn Header="Explorer" Binding="{Binding Explorer}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
