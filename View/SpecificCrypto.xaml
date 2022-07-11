@@ -7,21 +7,58 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid Margin="5" ItemsSource="{Binding Items}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Rank" Binding="{Binding Rank}" />
-                <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Supply" Binding="{Binding Supply}" />
-                <DataGridTextColumn Header="MaxSupply" Binding="{Binding MaxSupply}" />
-                <DataGridTextColumn Header="MarketCapUsd" Binding="{Binding MarketCapUsd}" />
-                <DataGridTextColumn Header="VolumeUsd24Hr" Binding="{Binding VolumeUsd24Hr}" />
-                <DataGridTextColumn Header="PriceUsd" Binding="{Binding PriceUsd}" />
-                <DataGridTextColumn Header="ChangePercent24Hr" Binding="{Binding ChangePercent24Hr}" />
-                <DataGridTextColumn Header="Vwap24Hr" Binding="{Binding Vwap24Hr}" />
-                <DataGridTextColumn Header="Explorer" Binding="{Binding Explorer}" />
-            </DataGrid.Columns>
-        </DataGrid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <DataGrid Margin="5" ItemsSource="{Binding Items}" AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <Style TargetType="Hyperlink">
+                        <EventSetter Event="Click" Handler="Hyperlink_Click"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.LayoutTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="-90"/>
+                        <ScaleTransform ScaleX="1" ScaleY="-1" />
+                    </TransformGroup>
+                </DataGrid.LayoutTransform>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+                        <Setter Property="LayoutTransform">
+                            <Setter.Value>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                </TransformGroup>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style x:Name="TextCellStyle" TargetType="{x:Type DataGridCell}">
+                        <Setter Property="LayoutTransform">
+                            <Setter.Value>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                    <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                </TransformGroup>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Rank" Binding="{Binding Rank}" />
+                    <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Supply" Binding="{Binding Supply}" />
+                    <DataGridTextColumn Header="MaxSupply" Binding="{Binding MaxSupply}" />
+                    <DataGridTextColumn Header="MarketCapUsd" Binding="{Binding MarketCapUsd}" />
+                    <DataGridTextColumn Header="VolumeUsd24Hr" Binding="{Binding VolumeUsd24Hr}" />
+                    <DataGridTextColumn Header="PriceUsd" Binding="{Binding PriceUsd}" />
+                    <DataGridTextColumn Header="ChangePercent24Hr" Binding="{Binding ChangePercent24Hr}" />
+                    <DataGridTextColumn Header="Vwap24Hr" Binding="{Binding Vwap24Hr}" />
+                    <DataGridHyperlinkColumn Header="Explorer" Binding="{Binding Explorer}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </UserControl>

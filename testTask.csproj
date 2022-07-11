@@ -79,10 +79,14 @@
     </ApplicationDefinition>
     <Compile Include="Data\ApiData.cs" />
     <Compile Include="ViewModel\AllCryptosViewModel.cs" />
+    <Compile Include="ViewModel\ConverterViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\SpecificCryptoViewModel.cs" />
     <Compile Include="View\AllCryptos.xaml.cs">
       <DependentUpon>AllCryptos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Converter.xaml.cs">
+      <DependentUpon>Converter.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -104,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AllCryptos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Converter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

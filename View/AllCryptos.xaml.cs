@@ -17,7 +17,6 @@ namespace testTask.View
         {
 
             Hyperlink link = (Hyperlink)e.OriginalSource;
-            Console.WriteLine(link.NavigateUri);
             if (link.NavigateUri.ToString().Contains("https"))
             {
                 System.Diagnostics.Process.Start(link.NavigateUri.ToString());

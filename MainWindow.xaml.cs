@@ -19,5 +19,9 @@ namespace testTask
         {
             DataContext = new AllCryptosViewModel();
         }
+        private void Converter_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ConverterViewModel();
+        }
     }
 }

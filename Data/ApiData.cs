@@ -27,9 +27,6 @@ namespace testTask.Data
 
             HttpWebResponse WebResp = (HttpWebResponse)WebReq.GetResponse();
 
-            Console.WriteLine(WebResp.StatusCode);
-            Console.WriteLine(WebResp.Server);
-
             string jsonString;
             using (Stream stream = WebResp.GetResponseStream())
             {

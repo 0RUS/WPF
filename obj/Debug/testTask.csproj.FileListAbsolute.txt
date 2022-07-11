@@ -26,3 +26,5 @@ D:\testTask\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\testTask\obj\Debug\View\AllCryptos.baml
 D:\testTask\obj\Debug\View\MainPage.baml
 D:\testTask\obj\Debug\View\SpecificCrypto.baml
+D:\testTask\obj\Debug\View\Converter.g.cs
+D:\testTask\obj\Debug\View\Converter.baml

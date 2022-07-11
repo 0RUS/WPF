@@ -20,6 +20,9 @@
         <DataTemplate x:Name="specificCryptoTamplate" DataType="{x:Type viewmodel:SpecificCryptoViewModel}">
             <view:SpecificCrypto DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="converterTamplate" DataType="{x:Type viewmodel:ConverterViewModel}">
+            <view:Converter DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -31,6 +34,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="Main Page" Click="MainPage_Clicked"/>
                 <Button Content="All cryptos" Click="AllCryptos_Clicked"/>
+                <Button Content="Converter" Click="Converter_Clicked"/>
             </StackPanel>
         </DockPanel>
 

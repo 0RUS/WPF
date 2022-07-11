@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace testTask.Data
 {
@@ -44,7 +45,6 @@ namespace testTask.Data
                     Explorer = item.Explorer
                 });
             }
-
             return result;
         }
 
